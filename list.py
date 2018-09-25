@@ -68,7 +68,7 @@ m3 = []
 i = []
 j = []
 count = 0
-print(m1 and m2)
+
 while count < len(m1):
   i.append(m1[count][0] + m2[count][0])
   count1 = 0 
@@ -91,8 +91,8 @@ while count < len(m1):
   m3[0].append(m1[count][0] + m2[count][0])
   count1 = 0 
   if count < (count1 +1): # if (count - 1) < count1:
-    while (count1) < len(m2): 
-      m2[1].append(m1[count1][1] + m2[count1][1])
+    while count1 < len(m2): 
+      m3[1].append(m1[count1][1] + m2[count1][1])
       count1 += 1
   count += 1
 print('Refactored Matrix: ', m3)
@@ -114,14 +114,13 @@ i = []
 j = []
 count = 0
 
-while count < len(m1 and m2):
-  i.append(m1[count][0] + m2[count][0])
+count = 0
+while count < len(m1):
+  m3[0].append(m1[count][0] + m2[count][0])
   count1 = 0 
   if count < (count1 +1): # if (count - 1) < count1:
-    while (count1) < len(m2): 
-      j.append(m1[count1][1] + m2[count1][1])
+    while count1 < len(m2): 
+      m3[1].append(m1[count1][1] + m2[count1][1])
       count1 += 1
   count += 1
-m3.append(i)
-m3.append(j)
-print('Matrix addition: ', m3)
+print('Refactored Matrix: ', m3)
