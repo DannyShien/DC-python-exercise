@@ -57,17 +57,20 @@
 
 # LETTER SUMMARY:
 word_input = input('Type a word: ')
-def letter_histogram(word):
-  histogram= {}
-  for word in word_input:
-    for letter in word:
-      keys=histogram.keys()
-      if letter in keys: 
-        histogram[letter] += 1
-      else: 
-        histogram[letter] = 1
-  return histogram
-         
+histogram = {}
+list = []
+count = []
+
+for i in word_input:
+  if i not in list:
+    list.append(i)
+for i in list:
+  count.append(word_input.count(i))
+for i in range(len(list)): 
+  histogram[list[i]] = count[i]
+print(histogram)  
+
+
    
     
 
