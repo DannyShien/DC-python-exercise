@@ -7,14 +7,25 @@ phonebook_dict = {
 }
 # printing Elizabeth's phone number
 print('Phone number: ', phonebook_dict['Elizabeth'])
+
 # adding a new entry to dicitonary
 phonebook_dict['Kareem'] = '938-489-1234'
+
 # deleteing Alice's entry
 del phonebook_dict['Alice']
+
 # changing 'Bob's number'
 phonebook_dict['Bob'] = '968-345-2345'
+
 # print all phone entries
+# option 1
 print('Phonebook entries: ', phonebook_dict)
+# option 2
+for person in phonebook_dict: 
+  print('%s: %s' %(person, phonebook_dict[person]))
+# for person, phone in phonebook_dict.items(): 
+# print('%s: %s'(person, phone_dict))
+
 # EXERCISE 2: 
 ramit = {
   'name': 'Ramit',
@@ -33,16 +44,24 @@ ramit = {
     }
   ]
 }
+
 # getting the email address of Ramit
-print('Ramit\'s email: ', ramit['email'])
-# for email in ramit['email']: 
-#   print('Ramit\'s email addresss: ', ramit['email'])
+print('Ramit\'s email address: ', ramit['email'])
+
 # getting ramit's first interst
 print('Ramit\'s first interest: ', ramit['interests'][0])
+
 # getting jasmine's email address
-print('Jasmin\'s email address: ', ramit['friends'][0]['email'])
+#print('Jasmin\'s email address: ', ramit['friends'][0]['email'])
+for f in ramit['friends']: 
+  if f['name'] == 'Jasmine':
+    print('Jasmine\'s email:', f['email'])
+
 # getting Jan second interest
-print('Jan\'s second interest: ', ramit['friends'][1]['interests'][1])
+#print('Jan\'s second interest: ', ramit['friends'][1]['interests'][1])
+for f in ramit['friends']: 
+  if f['name'] == 'Jan':
+    print('Jan\'s interest:', f['interests'][1])
 
 # LETTER SUMMARY:
 word_input = input('Type a word: ')
@@ -58,6 +77,12 @@ for i in list:
 for i in range(len(list)): 
   histogram[list[i]] = counter[i]
 print(histogram)  
+# ANOTHER EXAMPLE OF LETTER SUMMARY
+# for letter in word_input: 
+#   if letter in histogram: 
+#     histogram[letter] += 1
+#   else: 
+#     histogram[letter] += 1
 
 # WORD SUMMARY
 sentence = str.split((input('Type a sentence: ')))
